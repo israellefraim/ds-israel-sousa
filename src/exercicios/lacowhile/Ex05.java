@@ -1,3 +1,5 @@
+package exercicios.lacowhile;
+
 import java.util.Scanner;
 
 public class Ex05 
