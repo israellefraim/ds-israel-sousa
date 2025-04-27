@@ -12,7 +12,7 @@ public class Ex13
 		String nome = input.nextLine();
 		
 		System.out.print("Insira seu sexo (M/F): ");
-		String sexo = input.nextLine();
+		String sexo = input.nextLine().toUpperCase();
 		
 		System.out.print("Insira sua altura (m): ");
 		float altura = input.nextFloat();
@@ -21,7 +21,8 @@ public class Ex13
 		
 		if (sexo.equals("M")) {
 		    pesoIdeal = (72.7f * altura) - 58;
-		} else {
+		}
+		else {
 		    pesoIdeal = (62.1f * altura) - 44.7f;
 		}
 		

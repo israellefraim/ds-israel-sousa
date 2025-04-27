@@ -14,12 +14,12 @@ public class Ex05
         while (i <= 9) {
             System.out.print("Insira o " + (i+1) + "º número: ");
             lista[i] = input.nextFloat();
-            if (i == 0){
+            if (i == 0)
                 maiorNum = lista[0];
-            }
-            if (lista[i] > maiorNum) {
+
+            if (lista[i] > maiorNum)
                 maiorNum = lista[i];
-            }
+
             i++;
         }
         
