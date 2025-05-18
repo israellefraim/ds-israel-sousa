@@ -16,9 +16,9 @@ public class InteracaoUsuario {
                 System.out.print("Escolha um automóvel: ");
                 int automovel = input.nextInt();
 
-                if (automovel < 1 || automovel > 2) {
+                if (automovel < 1 || automovel > 2)
                     throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1 OU 2\033[m");
-                }
+
 
                 if (automovel == 2) {
                     CarroMoto moto1 = new CarroMoto();
@@ -47,9 +47,9 @@ public class InteracaoUsuario {
                     int modeloMoto = input.nextInt();
                     input.nextLine();
 
-                    if (modeloMoto < 1 || modeloMoto > 3) {
+                    if (modeloMoto < 1 || modeloMoto > 3)
                         throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1, 2 OU 3\033[m");
-                    }
+
 
                     switch (modeloMoto) {
                         case 1:
@@ -93,9 +93,9 @@ public class InteracaoUsuario {
                     int modeloCarro = input.nextInt();
                     input.nextLine();
 
-                    if (modeloCarro < 1 || modeloCarro > 3) {
+                    if (modeloCarro < 1 || modeloCarro > 3)
                         throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1, 2 OU 3\033[m");
-                    }
+
 
                     switch (modeloCarro) {
                         case 1:
