@@ -10,8 +10,6 @@ public class Ex08
 	    System.out.print("Insira o valor do delimitador: ");
 	    int valorDelimitador = input.nextInt();
 	    
-	    for (int i = 1; i <= valorDelimitador; i++) {
-	        System.out.println(i);
-	    }
+	    for (int i = 1; i <= valorDelimitador; i++) System.out.println(i);
 	}
 }

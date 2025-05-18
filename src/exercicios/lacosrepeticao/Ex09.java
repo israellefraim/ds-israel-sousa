@@ -17,8 +17,6 @@ public class Ex09
 	    } while (valorDelimitador <= 0);
 	    
 	    
-	    for (int i = 1; i <= valorDelimitador; i++) {
-	        System.out.println(i);
-	    }
+	    for (int i = 1; i <= valorDelimitador; i++) System.out.println(i);
 	}
 }

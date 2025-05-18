@@ -11,10 +11,8 @@ public class Ex15
 		System.out.print("Insira um número inteiro: ");
 		int num = input.nextInt();
 		
-		for (int i = num; i >= 1; i--) {
-		    valoresAcumulados *= i;
-		}
-		
+		for (int i = num; i >= 1; i--) valoresAcumulados *= i;
+
 		System.out.println(valoresAcumulados);
 	}
 }

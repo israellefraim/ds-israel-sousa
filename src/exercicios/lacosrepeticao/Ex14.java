@@ -16,8 +16,6 @@ public class Ex14
 	        lista.add(lista.get(i-1) + lista.get(i-2));
 	    } while (lista.get(i) <= 500);
 	    
-	    for (int num : lista) {
-	        System.out.print(num + " ");
-	    }
+	    for (int num : lista) System.out.print(num + " ");
 	}
 }
