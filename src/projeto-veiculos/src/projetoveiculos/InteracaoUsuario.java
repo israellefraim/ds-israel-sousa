@@ -1,4 +1,5 @@
 package projetoveiculos;
+import java.sql.SQLOutput;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class InteracaoUsuario {
 
                 System.out.print("Escolha um automóvel: ");
                 int automovel = input.nextInt();
+                input.nextLine();
 
                 if (automovel < 1 || automovel > 2)
                     throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1 OU 2\033[m");
@@ -34,7 +36,7 @@ public class InteracaoUsuario {
                     moto2.potencia = 200;
 
                     CarroMoto moto3 = new CarroMoto();
-                    moto3.modelo = "\n\033[1;7;34mHonda Super Blackbird\033[m";
+                    moto3.modelo = "\033[1;7;34mHonda Super Blackbird\033[m";
                     moto3.ano = 1996;
                     moto3.topSpeed = 287;
                     moto3.potencia = 164;
@@ -54,12 +56,15 @@ public class InteracaoUsuario {
                     switch (modeloMoto) {
                         case 1:
                             moto1.mostrarInfos();
+                            moto1.interacaoVeiculo(moto1.modelo);
                             break;
                         case 2:
                             moto2.mostrarInfos();
+                            moto2.interacaoVeiculo(moto2.modelo);
                             break;
                         case 3:
                             moto3.mostrarInfos();
+                            moto3.interacaoVeiculo(moto3.modelo);
                             break;
                     }
                     System.out.println("\nDeseja reiniciar o programa? (s/n)");
@@ -80,7 +85,7 @@ public class InteracaoUsuario {
                     carro2.potencia = 963;
 
                     CarroMoto carro3 = new CarroMoto();
-                    carro3.modelo = "\n\033[1;7;94mPorsche 918 Spyder\033[m";
+                    carro3.modelo = "\033[1;7;94mPorsche 918 Spyder\033[m";
                     carro3.ano = 2016;
                     carro3.topSpeed = 345;
                     carro3.potencia = 887;
@@ -96,26 +101,30 @@ public class InteracaoUsuario {
                     if (modeloCarro < 1 || modeloCarro > 3)
                         throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1, 2 OU 3\033[m");
 
-
                     switch (modeloCarro) {
                         case 1:
                             carro1.mostrarInfos();
+                            carro1.interacaoVeiculo(carro1.modelo);
                             break;
                         case 2:
                             carro2.mostrarInfos();
+                            carro2.interacaoVeiculo(carro2.modelo);
                             break;
                         case 3:
                             carro3.mostrarInfos();
+                            carro3.interacaoVeiculo(carro3.modelo);
                             break;
                     }
                     System.out.println("\nDeseja reiniciar o programa? (s/n)");
                     String resposta = input.nextLine().trim().toLowerCase();
 
+                    if (!resposta.equals("s") && !resposta.equals("n"))
+                        throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 's' ou 'n'\033[m");
+
                     loop = (resposta.equals("s") || resposta.equals("sim"));
                 }
             } catch (InputMismatchException e) {
                 System.out.println("\n\033[1;4;91mO VALOR DEVE SER UM NÚMERO INTEIRO\033[m");
-                input.nextLine();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             } finally {
