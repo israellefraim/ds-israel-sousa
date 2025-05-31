@@ -1,5 +1,3 @@
-package projetoveiculos;
-
 import java.util.Scanner;
 
 public class CarroMoto {

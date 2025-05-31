@@ -25,8 +25,9 @@ bin/
 ### VS Code ###
 .vscode/
 
+.idea
+
+veiculos.iml
+
 ### Mac OS ###
 .DS_Store
-
-projeto-veiculos.iml
-.idea/
