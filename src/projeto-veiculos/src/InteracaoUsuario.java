@@ -14,11 +14,9 @@ public class InteracaoUsuario {
 
                 System.out.print("Escolha um automóvel: ");
                 int automovel = input.nextInt();
-                input.nextLine();
 
                 if (automovel < 1 || automovel > 2)
-                    throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1 OU 2\033[m");
-
+                    throw new IllegalArgumentException("\n\033[1;4;91mVALOR INVÁLIDO! ESCOLHA APENAS 1 OU 2\033[m");
 
                 if (automovel == 2) {
                     CarroMoto moto1 = new CarroMoto();
@@ -48,27 +46,24 @@ public class InteracaoUsuario {
                     input.nextLine();
 
                     if (modeloMoto < 1 || modeloMoto > 3)
-                        throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1, 2 OU 3\033[m");
+                        throw new IllegalArgumentException("\n\033[1;4;91mVALOR INVÁLIDO! ESCOLHA APENAS 1, 2 OU 3\033[m");
 
 
                     switch (modeloMoto) {
                         case 1:
                             moto1.mostrarInfos();
-                            moto1.interacaoVeiculo(moto1.modelo);
+                            moto1.interacaoVeiculo(input);
                             break;
                         case 2:
                             moto2.mostrarInfos();
-                            moto2.interacaoVeiculo(moto2.modelo);
+                            moto2.interacaoVeiculo(input);
                             break;
                         case 3:
                             moto3.mostrarInfos();
-                            moto3.interacaoVeiculo(moto3.modelo);
+                            moto3.interacaoVeiculo(input);
                             break;
                     }
-                    System.out.println("\nDeseja reiniciar o programa? (s/n)");
-                    String resposta = input.nextLine().trim().toLowerCase();
-
-                    loop = (resposta.equals("s") || resposta.equals("sim"));
+                    loop = CarroMoto.reiniciarPrograma(input);
                 } else {
                     CarroMoto carro1 = new CarroMoto();
                     carro1.modelo = "\033[1;7;31mMcLaren P1\033[m";
@@ -97,32 +92,27 @@ public class InteracaoUsuario {
                     input.nextLine();
 
                     if (modeloCarro < 1 || modeloCarro > 3)
-                        throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 1, 2 OU 3\033[m");
+                        throw new IllegalArgumentException("\n\033[1;4;91mVALOR INVÁLIDO! ESCOLHA APENAS 1, 2 OU 3\033[m");
 
                     switch (modeloCarro) {
                         case 1:
                             carro1.mostrarInfos();
-                            carro1.interacaoVeiculo(carro1.modelo);
+                            carro1.interacaoVeiculo(input);
                             break;
                         case 2:
                             carro2.mostrarInfos();
-                            carro2.interacaoVeiculo(carro2.modelo);
+                            carro2.interacaoVeiculo(input);
                             break;
                         case 3:
                             carro3.mostrarInfos();
-                            carro3.interacaoVeiculo(carro3.modelo);
+                            carro3.interacaoVeiculo(input);
                             break;
                     }
-                    System.out.println("\nDeseja reiniciar o programa? (s/n)");
-                    String resposta = input.nextLine().trim().toLowerCase();
-
-                    if (!resposta.equals("s") && !resposta.equals("n"))
-                        throw new IllegalArgumentException("\n\033[1;4;91mESCOLHA APENAS 's' ou 'n'\033[m");
-
-                    loop = (resposta.equals("s") || resposta.equals("sim"));
+                    loop = CarroMoto.reiniciarPrograma(input);
                 }
             } catch (InputMismatchException e) {
-                System.out.println("\n\033[1;4;91mO VALOR DEVE SER UM NÚMERO INTEIRO\033[m");
+                System.out.println("\n\033[1;4;91mVALOR INVÁLIDO! O VALOR DEVE SER UM NÚMERO INTEIRO\033[m");
+                input.nextLine();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             } finally {
@@ -132,5 +122,6 @@ public class InteracaoUsuario {
                     System.out.println("-Programa encerrado-");
             }
         }
+        input.close();
     }
 }
