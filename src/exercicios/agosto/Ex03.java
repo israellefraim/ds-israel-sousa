@@ -9,7 +9,7 @@ public class Ex03 {
         System.out.print("Insira uma temperatura em ºC: ");
         int temperaturaCelsius = input.nextInt();
 
-        double temperaturaFahrenheit = (temperaturaCelsius * (9/5) + 32);
+        double temperaturaFahrenheit = (temperaturaCelsius * 1.8 + 32);
 
         System.out.println(temperaturaCelsius + "ºC = " + temperaturaFahrenheit + "ºF");
     }
